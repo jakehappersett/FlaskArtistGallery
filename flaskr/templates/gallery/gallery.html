@@ -1,0 +1,10 @@
+  <!doctype html>
+    <title>Gallery</title>
+    <h1>Image Gallery</h1>
+        <ul>
+          {% for file in files %}
+          <li>
+              <img src = "{{url_for('static', filename=file)}}" alt = "image"> </img>
+          </li>
+            {% endfor %}
+        </ul>
