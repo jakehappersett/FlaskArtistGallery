@@ -18,6 +18,6 @@ def get_image_paths():
 @bp.route('/gallery')
 def show_gallery():
     files = get_image_paths()
-    return render_template('gallery/simpleLightBox.html', files=files)
+    return render_template('gallery/gallery.html', files=files)
 
 

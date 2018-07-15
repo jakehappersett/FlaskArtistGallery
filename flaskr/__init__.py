@@ -1,5 +1,5 @@
 import os
-from flask import Flask, url_for
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -9,7 +9,9 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flask.sqlite'),
         UPLOAD_FOLDER=os.path.join(app.root_path, 'static'),
-        ALLOWED_EXTENSIONS=set(['jpg', 'jpeg', 'gif', 'png'])
+        ALLOWED_EXTENSIONS=set(['jpg', 'jpeg', 'gif', 'png']),
+        USERNAME='lex',
+        PASSWORD='lex'
 
     )
 
@@ -25,27 +27,15 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/hello')
-    def hello():
-        return "hello"
+    @app.route('/')
+    def index():
+        return render_template('index.html')
 
     from . import upload
-    # TODO : make upload folder dynamic and editable at runtime
-    # upload_folder = upload.create_dir('/home/jake/images')
     app.register_blueprint(upload.bp)
 
     from . import gallery
     app.register_blueprint(gallery.bp)
-
-    # from . import db
-    # db.init_app(app)
-    #
-    # from . import auth
-    # app.register_blueprint(auth.bp)
-    #
-    # from . import blog
-    # app.register_blueprint(blog.bp)
-    # app.add_url_rule('/', endpoint='index')
+    app.add_url_rule('/', endpoint='index')
 
     return app
-
