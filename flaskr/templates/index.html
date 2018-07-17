@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1> this is the index</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}titles may go here{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h2> this is content </h2>
+{% endblock %}
+
+{% block footer %}
+    <p> footer is here</p>
+{% endblock %}
