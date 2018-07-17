@@ -31,6 +31,9 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
 
+    from . import auth
+    app.register_blueprint(auth.bp)
+
     from . import upload
     app.register_blueprint(upload.bp)
 

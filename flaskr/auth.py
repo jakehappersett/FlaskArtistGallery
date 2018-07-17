@@ -34,7 +34,7 @@ def login():
     return render_template('auth/login.html')
 
 
-@bp.before_app_request()
+@bp.before_app_request
 def load_logged_in_user():
     admin = session.get('admin')
 
@@ -53,3 +53,8 @@ def login_required(view):
         return view(**kwargs)
 
     return wrapped_view()
+
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
