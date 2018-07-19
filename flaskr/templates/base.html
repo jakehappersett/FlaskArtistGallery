@@ -1,6 +1,7 @@
 <!doctype html>
 <title>{% block title %}{% endblock %} - AEH</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css') }}">
 <nav>
   <h1>AEH</h1>
   <ul>
@@ -27,8 +28,9 @@
         {% block content %}{% endblock %}
     </div>
 
-    <div id="footer">
-        {% block footer %}{% endblock %}
+    <div id="footer" >
+        {% block footer %}
+        {% endblock %}
     </div>
 
 </section>
