@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
-<head>
-    {% block title %}page titles go here{% endblock %}
-</head>
+{% block title %}
+    Home
+{% endblock %}
+
 {% block header %}
-    <h1> This is the title of the page </h1>
 {% endblock %}
 
 {% block content %}
-    <h2> this is content </h2>
+    <div class="twelve columns">
+        <img class="u-max-full-width" src = "/static/PaintSwatch_No background.jpg">
+    </div>
 {% endblock %}
+
 
 {% block footer %}
     <p> footer is here</p>

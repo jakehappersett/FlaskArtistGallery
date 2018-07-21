@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css') }}">
 <nav>
-  <h1>AEH</h1>
   <ul>
     <!-- {% if g.user %}
       <li><span>{{ g.user['username'] }}</span>
@@ -14,23 +13,38 @@
     -->
   </ul>
 </nav>
-<section class="content">
+<div>
 
-  <header>
-    {% block header %}{% endblock %}
-  </header>
 
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
+        <header>
+            <div class="one-third column u-pull-left">
+                <!--<img class="u-max-full-width" src="/static/Signature.jpg">-->
+                <img class=""u-max-full-width" src="/static/BlueGreenSwatch.jpg">
+            </div>
+            <div class="one-third column">
+                {% block header %}{% endblock %}
+            </div>
+            <nav class="one-third column u-pull-right">
+                <ul>
+                    <li>first</li>
+                </ul>
+            </nav>
+        </header>
 
-    <div id ="content">
-        {% block content %}{% endblock %}
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        <div class ="content">
+            {% block content %}{% endblock %}
+        </div>
+
     </div>
 
-    <div id="footer" >
+    <footer class="footer" >
         {% block footer %}
         {% endblock %}
-    </div>
+    </footer>
 
-</section>
+</div>

@@ -1,4 +1,17 @@
 img {
-max-width: 100%,
-height: auto;
+    max-width: 100%,
+    height: auto;
 }
+
+.content {
+    min-height: calc(100vh-70px);
+}
+
+.footer {
+   position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    }
+
