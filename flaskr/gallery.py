@@ -1,11 +1,12 @@
 import os
-from flask import current_app, Blueprint, render_template
+from flask import current_app, Blueprint, render_template, send_from_directory
 
 
 bp = Blueprint('gallery', __name__, url_prefix='/gallery')
 
 
 def get_image_paths():
+    #todo: convert to dictionary that stores type based on folder input
     images = os.listdir(current_app.config['UPLOAD_FOLDER'])
     full = []
     for image in images:
@@ -15,9 +16,12 @@ def get_image_paths():
     return full
 
 
-@bp.route('/gallery')
+@bp.route('/')
 def show_gallery():
     files = get_image_paths()
     return render_template('gallery/gallery.html', files=files)
 
 
+@bp.route('/<path:filename>')
+def download_file(filename):
+    return send_from_directory(current_app.config['UPLOAD_FOLDER'], filename, as_attachment=True)

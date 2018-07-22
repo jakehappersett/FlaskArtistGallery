@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> simple light box</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='lightbox.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='lightbox.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
 
-{% for file in files %}
-    <a href="{{url_for('static',filename=file)}}" data-lightbox="lightbox-group-1">
-        <img class="lightbox-thumbnail" src="{{url_for('static',filename=file)}}" >
-    </a>
-{% endfor %}
-</body>
-</html>
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    {% for file in files %}
+        <a href="{{ url_for('gallery.download_file', filename=file )}}" data-lightbox="lightbox-group-1">
+            <img class="lightbox-thumbnail u-max-full-width" src="{{url_for( 'gallery.download_file', filename=file )}}">
+<!--            <img class="lightbox-thumbnail" src="{{url_for('static',filename=file)}}" >-->
+        </a>
+    {% endfor %}
+{% endblock %}
