@@ -17,36 +17,47 @@
 
 
         <header>
-            <div class="one-third column u-pull-left">
-                <img class="u-max-full-width" src="/static/Signature.jpg">
-<!--                <img class="u-max-full-width relative" src="/static/blueGreenSwatch.jpg">
-                <div class="u-pull-left titlefixed">
-                    <h1>A E H</h1>
-                </div>-->
+            <div class="row">
+                <div class="one-third column u-pull-left">
+<!--                    <img class="u-max-full-width" src="/static/Signature.jpg">-->
+                    <img class="u-max-full-width relative" src="/static/blueGreenSwatch.jpg">
+                    <div class="u-pull-left titlefixed">
+                        <h1>A E H</h1>
+                    </div>
+                </div>
+                <div class="one-third column">
+                    {% block header %}{% endblock %}
+                </div>
+                <nav class="one-third column u-pull-right">
+                    <ul>
+                        <li>
+                            <a href="none">Gallery</a>
+                            <a href="none">About</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="one-third column">
-                {% block header %}{% endblock %}
-            </div>
-            <nav class="one-third column u-pull-right">
-                <ul>
-                    <li>first</li>
-                </ul>
-            </nav>
         </header>
 
     <div class="container">
-        {% for message in get_flashed_messages() %}
-            <div class="flash">{{ message }}</div>
-        {% endfor %}
+        <div class="row">
+            <div class="twelve columns">
+                {% for message in get_flashed_messages() %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
 
-        <div class ="content">
+        <div class ="content row">
             {% block content %}{% endblock %}
         </div>
 
     </div>
 
-    <footer class="footer u-pull-right" >
-        <p> instagram and stuff</p>
+    <footer class="footer row">
+        <div class="one-third column u-pull-right">
+            <p class="u-pull-right"> instagram and stuff</p>
+        </div>
     </footer>
 
 </div>
