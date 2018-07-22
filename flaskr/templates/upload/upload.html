@@ -1,17 +1,35 @@
-  <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-          {% for message in messages %}
-          <lie> {{message}}</lie>
-            {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+{% extends 'base.html' %}
 
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
+{% block title %}
+Upload
+{% endblock %}
+
+{% block header %}
+<h1>Upload to Gallery</h1>
+{% endblock %}
+
+{% block content %}
+<!--<form method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=Upload>
+</form>-->
+<form method=post enctype="multipart/form-data">
+    <div class="row">
+        <div class="six columns">
+            <label for="title">Title</label>
+            <input class="u-full-width" type="text" placeholder="you can leave this empty for now" id="title">
+        </div>
+        <div class="six columns">
+            <label for="type">Medium</label>
+            <select class="u-full-width" id="type">
+                <option value="Option 1">Drawing</option>
+                <option value="Option 2">Painting</option>
+                <option value="Option 3">Printmaking</option>
+            </select>
+        </div>
+    </div>
+    <label for="FilePath">File Path</label>
+    <input  type=file name=file id="FilePath">
+    <input class="button-primary" type=submit value=Upload>
+</form>
+{% endblock %}

@@ -42,7 +42,7 @@ def upload_file():
             file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
             flash(filename + ' saved')
             # return redirect(url_for('.uploaded_file', filename=filename))
-            return redirect(url_for('gallery.show_gallery'))
+            return redirect(url_for('upload.upload_file'))
         else:
             flash('File extension not supported - tell Jake about this and he will fix it')
     return render_template('upload/upload.html')
