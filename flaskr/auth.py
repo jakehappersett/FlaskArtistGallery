@@ -16,12 +16,12 @@ def login():
 
         if username is None:
             error = 'Enter a username'
-        elif not username == current_app.config('USERNAME'):
+        elif not username == current_app.config['USERNAME']:
             error = 'Ask Jake for your username'
 
         if password is None:
             error = 'Enter a password'
-        elif not password == current_app.config('PASSWORD'):
+        elif not password == current_app.config['PASSWORD']:
             error = 'Ask Jake for your password'
 
         if error is None:

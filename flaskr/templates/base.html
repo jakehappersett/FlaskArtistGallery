@@ -9,56 +9,58 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='lightbox.css') }}">
 <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">-->
 <nav>
-  <ul>
-    <!-- {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-    {% else %}
-      <li><a href="{{ url_for('auth.login') }}">Log In</a>
-    {% endif %}
-    -->
-  </ul>
+    <ul>
+        <!-- {% if g.user %}
+          <li><span>{{ g.user['username'] }}</span>
+          <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+        {% else %}
+          <li><a href="{{ url_for('auth.login') }}">Log In</a>
+        {% endif %}
+        -->
+    </ul>
 </nav>
 <div>
 
 
-        <header>
-            <div class="row">
-                <div class="eight columns u-pull-left">
-<!--                    <img class="u-max-full-width" src="/static/Signature.jpg">-->
-<!--                    <img class="u-max-full-width relative" src="/static/blueGreenSwatch.jpg">-->
-                    <div class="u-pull-left"style ="padding: 1em;">
-                        <h1>A L E X A N D R A</h1>
-                        <h1>H A P P E R S E T T </h1>
-                    </div>
-                </div>
-                <nav class="one-third column u-pull-right">
-                    <ul>
-                        <li>
-                            <a href="{{url_for('index')}}">Home</a>
-                            <a href="{{url_for('gallery.show_gallery')}}">Gallery</a>
-                            <a href="none">About</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="row">
-                <div class="twelve columns center">
-                    {% block header %}{% endblock %}
+    <header>
+        <div class="row">
+            <div class="eight columns u-pull-left">
+                <!--                    <img class="u-max-full-width" src="/static/Signature.jpg">-->
+                <!--                    <img class="u-max-full-width relative" src="/static/blueGreenSwatch.jpg">-->
+                <div class="u-pull-left" style="padding: 1em;">
+                    <h1>A L E X A N D R A</h1>
+                    <h1>H A P P E R S E T T </h1>
                 </div>
             </div>
-        </header>
+            <nav class="one-third column u-pull-right">
+                <ul>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('gallery.show_gallery')}}">Gallery</a></li>
+                    <li><a href="none">About</a></li>
+                    {% if g.user %}
+                    <li><a href="{{url_for('upload.upload_file')}}">Upload</a></li>
+                    <li><a href="{{ url_for('auth.logout')}}">Log Out</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="twelve columns center">
+                {% block header %}{% endblock %}
+            </div>
+        </div>
+    </header>
 
     <div class="container">
         <div class="row">
             <div class="twelve columns">
                 {% for message in get_flashed_messages() %}
-                    <div class="flash">{{ message }}</div>
+                <div class="flash">{{ message }}</div>
                 {% endfor %}
             </div>
         </div>
 
-        <div class ="content row">
+        <div class="content row">
             {% block content %}{% endblock %}
         </div>
 
@@ -66,9 +68,18 @@
 
     <footer class="footer row">
         <div class="one-third column u-pull-right" style="padding: .5em;">
-            <i class="fa fa-twitter u-pull-right" style="font-size:36px"></i>
-            <i class="fa fa-instagram u-pull-right" style="font-size:36px"></i>
-            <i class="fa fa-pinterest-p u-pull-right" style="font-size:36px"></i>
+            <a href="{{url_for('auth.login')}}">
+                <i class="fa fa-rebel u-pull-right" style="font-size:36px"></i>
+            </a>
+            <a href="none">
+                <i class="fa fa-twitter u-pull-right" style="font-size:36px"></i>
+            </a>
+            <a href="none">
+                <i class="fa fa-instagram u-pull-right" style="font-size:36px"></i>
+            </a>
+            <a href="none">
+                <i class="fa fa-pinterest-p u-pull-right" style="font-size:36px"></i>
+            </a>
         </div>
     </footer>
 
