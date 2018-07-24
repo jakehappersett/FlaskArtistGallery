@@ -7,6 +7,18 @@ img {
     min-height: calc(100vh-70px);
 }
 
+.title {
+padding : 1.5em;
+}
+
+.indeximage {
+/*    background-image: url({{ url_for('static', filename='blueGreenSwatch.jpg') }});*/
+    height: 100%;
+/*    background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .footer {
    position: fixed;
     left: 0;

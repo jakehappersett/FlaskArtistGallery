@@ -5,12 +5,15 @@
 {% endblock %}
 
 {% block header %}
+<!--<div class="twelve columns">
+    <img class="u-max-full-width indeximage" src = "/static/blueGreenSwatch.jpg">
+</div>-->
 {% endblock %}
 
 {% block content %}
-    <div class="twelve columns">
-        <img class="u-max-full-width" src = "/static/PaintSwatch_No background.jpg">
-    </div>
+<body class="indeximage"
+      style="background-image: url({{ url_for('static', filename='blueGreenSwatch.jpg') }});">
+</body>
 {% endblock %}
 
 

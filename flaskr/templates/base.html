@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
 <title>{% block title %}{% endblock %} - AEH</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='skeleton.css') }}">
@@ -7,24 +8,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='lightbox.min.js') }}"></script>
 <link rel="stylesheet" href="{{ url_for('static', filename='lightbox.css') }}">
-<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">-->
-<nav>
-    <ul>
-        <!-- {% if g.user %}
-          <li><span>{{ g.user['username'] }}</span>
-          <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
-        {% else %}
-          <li><a href="{{ url_for('auth.login') }}">Log In</a>
-        {% endif %}
-        -->
-    </ul>
-</nav>
-<div>
-
 
     <header>
         <div class="row">
-            <div class="eight columns u-pull-left">
+            <div class="eight columns u-pull-left title">
                 <!--                    <img class="u-max-full-width" src="/static/Signature.jpg">-->
                 <!--                    <img class="u-max-full-width relative" src="/static/blueGreenSwatch.jpg">-->
                 <div class="u-pull-left" style="padding: 1em;">
@@ -84,3 +71,4 @@
     </footer>
 
 </div>
+</html>
