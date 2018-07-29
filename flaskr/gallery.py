@@ -20,7 +20,8 @@ def get_image_paths():
 @bp.route('/')
 def show_gallery():
     files = get_image_paths()
-    return render_template('gallery/gallery.html', files=files)
+    row_slice = int(len(files) / 4) + (len(files) % 4 > 0)  # added to round up
+    return render_template('gallery/gallery.html', files=files, row_slice=row_slice)
 
 
 @bp.route('/<path:filename>')

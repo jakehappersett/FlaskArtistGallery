@@ -8,7 +8,7 @@ Gallery
 {% endblock %}
 
 {% block content %}
-{% for filepart in files | slice(4) %}
+{% for filepart in files| sort | slice(row_slice) %}
 <div class="row">
     {% for file in filepart %}
     <div class="three columns">
