@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Gallery
+Gallery
 {% endblock %}
 
 {% block header %}
 {% endblock %}
 
 {% block content %}
-    {% for file in files %}
-        <a href="{{ url_for('gallery.download_file', filename=file )}}" data-lightbox="lightbox-group-1">
-            <img class="lightbox-thumbnail u-max-full-width" src="{{url_for( 'gallery.download_file', filename=file )}}">
-<!--            <img class="lightbox-thumbnail" src="{{url_for('static',filename=file)}}" >-->
+{% for file in len(files) %}
+{% if len(files) % 4 = 0 %}
+<div class="row">
+    {% for file in files[:4] %}
+    <div class="four columns">
+        <a href="{{ url_for('gallery.download_file', filename=files.popleft() )}}" data-lightbox="lightbox-group-1">
+            <img class="lightbox-thumbnail u-max-full-width"
+                 src="{{url_for( 'gallery.download_file', filename=files.popleft() )}}">
+            <!-- <img class="lightbox-thumbnail" src="{{url_for('static',filename=file)}}" >-->
         </a>
+    </div>
     {% endfor %}
+</div>
+{% endif %}
+{% endfor%}
 {% endblock %}
