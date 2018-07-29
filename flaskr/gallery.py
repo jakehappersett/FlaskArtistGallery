@@ -9,7 +9,7 @@ bp = Blueprint('gallery', __name__, url_prefix='/gallery')
 def get_image_paths():
     #todo: convert to dictionary that stores type based on folder input
     images = os.listdir(current_app.config['UPLOAD_FOLDER'])
-    full = deque()
+    full = []
     for image in images:
         if image.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']:
                 full.append(image)
