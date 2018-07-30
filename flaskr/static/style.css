@@ -13,17 +13,17 @@ padding : 1.5em;
 
 .indeximage {
 /*    background-image: url({{ url_for('static', filename='blueGreenSwatch.jpg') }});*/
-    height: 100%;
+    height: auto;
+    width: 100%
 /*    background-position: center;*/
+    position: relative;
+/*    left: 0px;
+    top: 0px;*/
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.imagethumb {
-
-
-}
 
 .footer {
    position: fixed;
