@@ -1,39 +1,93 @@
-img {
-    max-width: 100%,
-    height: auto;
+
+body {
+    padding-top: 65px;
 }
 
-.content {
-    min-height: calc(100vh-70px);
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+/* Add a dark background color with a little bit see-through */
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity:0.9;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a, .navbar .navbar-brand {
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    color: #000 !important;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+    background-color: red !important;
+}
+
+custfooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+/*img {
+    max-width: 100%;
+    height: auto;
 }
 
 .title {
-padding : 1.5em;
+    padding: 1.5em;
+    text-align: center;
 }
 
 .indeximage {
-/*    background-image: url({{ url_for('static', filename='blueGreenSwatch.jpg') }});*/
+    !*    background-image: url({{ url_for('static', filename='blueGreenSwatch.jpg') }});*!
     height: auto;
-    width: 100%
-/*    background-position: center;*/
+    width: 100%;
+    !*    background-position: center;*!
     position: relative;
-/*    left: 0px;
-    top: 0px;*/
+    !*    left: 0px;
+        top: 0px;*!
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 
-.footer {
-   position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    }
 i {
     padding: .5em;
-    font-size:36px;
+    font-size: 36px;
     color: #8a8a8a;
 }
 
@@ -53,30 +107,31 @@ nav ul {
     letter-spacing: .1em;
     line-height: 2em;
     margin: 0;
-    padding:0;
-    overflow:hidden;
-}
-nav li {
-    padding-top: 1.5em;
-	float: left;
+    padding: 0;
+    overflow: hidden;
 }
 
-nav li a{
+nav li {
+    padding-top: 1.5em;
+    float: left;
+}
+
+nav li a {
     display: inline-block;
     width: 5em;
     padding: .5em;
     font-size: 2em;
-	font-weight:400;
+    font-weight: 400;
     text-decoration: none;
-	text-transform:uppercase;
-	text-align: center;
+    text-transform: uppercase;
+    text-align: center;
     border-bottom: 1px solid transparent;
     transition: border .25s ease-out;
     color: #8a8a8a;
 }
 
-nav li a:hover{
+nav li a:hover {
     color: #222;
     border-color: #222;
     transition: border 0s ease-out;
-}
+}*/

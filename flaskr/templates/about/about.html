@@ -1,38 +1,56 @@
 {% extends 'base.html' %}
 
 {% block title %}
-About
+    About
 {% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="one-half column" style = "display: inline-block;">
-        <img class="u-max-full-width aboutimage" src="{{url_for('static', filename='aboutme.jpg')}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 d-inline-block">
+                <img class="img-responsive" src="{{ url_for('static', filename='aboutme.jpg') }}">
+            </div>
+            <div class="col-sm-12 col-md-6 w-auto d-inline-block">
+                <h2>I am an alumna of the University of Virginia with a passion for color, design, mixed media and
+                    creative
+                    expression.</h2>
+                <p>I remember first learning how to draw when I was about 10 years old, using a fashion tracing kit. I
+                    spent
+                    hours tracing and copying and creating my own outfits. This was how I taught myself to draw. Pablo
+                    Picasso
+                    said, “Good artists copy, great artists steal.” By copying pictures, I gained confidence in my
+                    drawing
+                    ability and developed my own creative style. Eventually I was drawing purely by observation. I still
+                    feel I
+                    can learn a lot just by practicing copying great artistic masters. To this day, I draw inspiration
+                    and
+                    borrow themes for my works from my favorite artists.</p>
+                <p>Perhaps it was learning to draw from a fashion tracing kit that fostered my interest in fashion
+                    illustration.
+                    If I’m ever in a creative rut, I grab an issue of Vogue and flip through the glossy pages filled
+                    with
+                    vibrant colors and intricate patterns. Taking cues from haute couture, fashion illustrations often
+                    get me
+                    into the creative mood. It allows me to come up with ideas for my other works, often completely
+                    unrelated to
+                    fashion.</p>
+                <p>I would describe my style as bright and colorful. Even in my black-and-white prints, I strive to
+                    create depth
+                    and “color” through the variations in lights and darks. My favorite subject to draw is people
+                    because I love
+                    the challenges they present. For instance, how do I best communicate their emotion? I enjoy studying
+                    the
+                    colors that make up their skin, eyes, and hair. For me, skin has never been just peach and shades of
+                    brown.
+                    There are blue and green undertones, perhaps even some purple. Layers upon layers of complex colors
+                    and I
+                    strive to capture them all.</p>
+                <p>I enjoy all types of media, though I mainly work in acrylics, watercolors, oil pastels, chalk
+                    pastels,
+                    colored pencils, and markers.</p>
+            </div>
+        </div>
     </div>
-    <div class="one-half column" style="display: inline-block;">
-        <h4>I am an alumna of the University of Virginia with a passion for color, design, mixed media and creative
-            expression.</h4>
-        <p>I remember first learning how to draw when I was about 10 years old, using a fashion tracing kit. I spent
-            hours tracing and copying and creating my own outfits. This was how I taught myself to draw. Pablo Picasso
-            said, “Good artists copy, great artists steal.” By copying pictures, I gained confidence in my drawing
-            ability and developed my own creative style. Eventually I was drawing purely by observation. I still feel I
-            can learn a lot just by practicing copying great artistic masters. To this day, I draw inspiration and
-            borrow themes for my works from my favorite artists.</p>
-        <p>Perhaps it was learning to draw from a fashion tracing kit that fostered my interest in fashion illustration.
-            If I’m ever in a creative rut, I grab an issue of Vogue and flip through the glossy pages filled with
-            vibrant colors and intricate patterns. Taking cues from haute couture, fashion illustrations often get me
-            into the creative mood. It allows me to come up with ideas for my other works, often completely unrelated to
-            fashion.</p>
-        <p>I would describe my style as bright and colorful. Even in my black-and-white prints, I strive to create depth
-            and “color” through the variations in lights and darks. My favorite subject to draw is people because I love
-            the challenges they present. For instance, how do I best communicate their emotion? I enjoy studying the
-            colors that make up their skin, eyes, and hair. For me, skin has never been just peach and shades of brown.
-            There are blue and green undertones, perhaps even some purple. Layers upon layers of complex colors and I
-            strive to capture them all.</p>
-        <p>I enjoy all types of media, though I mainly work in acrylics, watercolors, oil pastels, chalk pastels,
-            colored pencils, and markers.</p>
-    </div>
-</div>
 
 {% endblock %}
 
