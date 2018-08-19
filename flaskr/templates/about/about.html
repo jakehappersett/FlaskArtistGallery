@@ -7,13 +7,17 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6 d-inline-block">
-                <img class="img-responsive" src="{{ url_for('static', filename='aboutme.jpg') }}">
-            </div>
-            <div class="col-sm-12 col-md-6 w-auto d-inline-block">
-                <h2>I am an alumna of the University of Virginia with a passion for color, design, mixed media and
+            <div class="media">
+                <div class="col-sm-12 col-md-6 ">
+                <img class="img-responsive d-inline-block" src="{{ url_for('static', filename='aboutme.jpg') }}">
+                </div>
+                <div class="col-sm-12 col-md-6 w-auto d-inline-block">
+                    <img class="align-self-end">
+                <div class="media-body">
+                <p class="lead">I am an alumna of the University of Virginia with a passion for color, design, mixed media and
                     creative
-                    expression.</h2>
+                    expression.</p>
+                    <hr>
                 <p>I remember first learning how to draw when I was about 10 years old, using a fashion tracing kit. I
                     spent
                     hours tracing and copying and creating my own outfits. This was how I taught myself to draw. Pablo
@@ -48,6 +52,8 @@
                 <p>I enjoy all types of media, though I mainly work in acrylics, watercolors, oil pastels, chalk
                     pastels,
                     colored pencils, and markers.</p>
+            </div>
+            </div>
             </div>
         </div>
     </div>
