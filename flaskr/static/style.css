@@ -1,8 +1,16 @@
 
 body {
     padding-top: 65px;
+    font: 18px "Montserrat", sans-serif;
+    line-height: 1.8;
 }
 
+.mainimage{
+
+    background: url(blueYellowSwatch.jpg) center center;
+    background-size: cover;
+
+}
 .carousel-inner img {
     width: 100%; /* Set width to 100% */
     margin: auto;
@@ -11,26 +19,25 @@ body {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #2d2d30;
     border: 0;
-    font-size: 11px !important;
+    font-size: 16px !important;
     letter-spacing: 4px;
     opacity:0.9;
 }
 
 /* Add a gray color to all navbar links */
 .navbar li a, .navbar .navbar-brand {
-    color: #d5d5d5 !important;
+/*    color: #d5d5d5 !important;*/
 }
 
 /* On hover, the links will turn white */
 .navbar-nav li a:hover {
-    color: #fff !important;
+    color: #585556 !important;
 }
 
 /* The active link */
 .navbar-nav li.active a {
-    color: #fff !important;
+    color: #29292c !important;
     background-color:#29292c !important;
 }
 

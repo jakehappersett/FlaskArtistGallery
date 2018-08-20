@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <!--fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!--lightbox stuff-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='lightbox.min.js') }}"></script>
@@ -20,32 +21,45 @@
 
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ url_for('index') }}">ALEXANDRA HAPPERSETT</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('index') }}">ALEXANDRA HAPPERSETT</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('gallery.show_gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                {% if g.user %}
+                    <li><a href="{{ url_for('upload.upload_file') }}">Upload</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                {% endif %}
+
+                <li><a href="https://www.instagram.com/lexis_sketches/" data-toggle="tooltip" title="INSTA">
+                    <i class="fa fa-instagram" style="font-size:24px"></i>
+                </a>
+                </li>
+                <li><a href="none" data-toggle="tooltip" title="BUY STUFF">
+                    <i class="fa fa-pinterest-p" style="font-size:24px"></i>
+                </a>
+                </li>
+                <li><a href="{{ url_for('auth.login') }}" data-toggle="tooltip" title="LOGIN">
+                    <i class="fa fa-rebel" style="font-size:24px"></i>
+                </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{url_for('gallery.show_gallery')}}">Gallery</a></li>
-          <li><a href="{{url_for('about')}}">About</a></li>
-          {% if g.user %}
-              <li><a href="{{url_for('upload.upload_file')}}">Upload</a></li>
-              <li><a href="{{url_for('auth.logout')}}">Log Out</a></li>
-          {% endif %}
-      </ul>
-    </div>
-  </div>
 </nav>
 
 <div class="container">
     <div class="row">
-{#    todo:style this header#}
-        <div class="twelve columns center">
+        {#    todo:style this header#}
+        <div class="col-sm-12 text-center">
             {% block header %}{% endblock %}
         </div>
     </div>
@@ -61,8 +75,8 @@
 
 {% block content %}{% endblock %}
 
-<footer class="text-right custfooter">
-    <a href="{{url_for('auth.login')}}" data-toggle="tooltip" title="LOGIN">
+{#<footer class="text-right custfooter">
+    <a href="{{ url_for('auth.login') }}" data-toggle="tooltip" title="LOGIN">
         <i class="fa fa-rebel u-pull-right" style="font-size:36px"></i>
     </a>
     <a href="none" data-toggle="tooltip" title="TWITTER">
@@ -76,14 +90,14 @@
     </a>
 
     <br><br>
-</footer>
+</footer>#}
 </body>
 
 <script>
-$(document).ready(function(){
-    // Initialize Tooltip
-    $('[data-toggle="tooltip"]').tooltip();
-})
+    $(document).ready(function () {
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+    })
 </script>
 
 {#<footer class="footer row">
